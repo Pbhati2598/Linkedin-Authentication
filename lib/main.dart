@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
+import 'package:linkedin_auth/facebook_login.dart';
 import 'package:linkedin_login/linkedin_login.dart';
 
 
@@ -65,7 +66,9 @@ class LinkedinLogin extends StatelessWidget {
                   icon: Icon(Icons.person),
                   text: 'Profile',
                 ),
+                Tab(icon: Icon(Icons.facebook), text: 'facebook'),
                 Tab(icon: Icon(Icons.text_fields), text: 'Auth code'),
+
               ],
             ),
             title: const Text('LinkedIn Authorization'),
@@ -73,7 +76,9 @@ class LinkedinLogin extends StatelessWidget {
           body: const TabBarView(
             children: [
               LinkedInProfileExamplePage(),
+              facebook(),
               LinkedInAuthCodeExamplePage(),
+
             ],
           ),
         ),
@@ -260,3 +265,4 @@ class UserObject {
   final LinkedInProfileEmail? email;
   final LinkedInProfilePicture? profileImageUrl;
 }
+
